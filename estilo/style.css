@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+/* Configurações do plano de fundo. O 'no-repeat' serve para não repetir a imagem e o 'top center' serve para alinhar a imagem ao centro da tela */
+body {
+    background: url(/imagens/fundo-madeira.jpg) no-repeat top center;
+    background-size: cover; /* O 'cover' serve para cobrir toda a tela */
+    background-attachment: fixed; /* O 'fixed' serve para fixar a imagem para que não se mova com o scroll, fazendo com que somente o conteúdo se mova e o fundo fique fixo */
+}
+
+main {
+    position: relative; /* Atua como a referência com o qual o 'position: absolute' se alinha */
+    height: 100vh;
+}
+
+section#telefone {
+    position: absolute; /* Se aliha de acordo com o 'psotion: absolute' */
+    top: 50%; /* Alinha verticalmente ao centro *. Precisa do 'position: relative' e do 'transform: translate' */
+    left: 50%; /* Alinha horizontalmente ao centro. Precisa do 'position: absolute' e do 'transform: translate' */
+    transform: translate(-50%, -50%); /* Complementa o 'position: absolute' com 'top' e 'left', fazendo com que a caixa centralize na página */
+
+    /* 'height' e 'width' se referem ao tamanho da caixa, nesse caso, o celular */
+    height: 627px;
+    width: 311px;
+    background: url(/imagens/frame-iphone.png) no-repeat;
+}
+
+iframe#tela {
+    position: relative;
+    /* As configurações de 'top', 'left', 'width' e 'height' se referem ao tamanho da imagem na tela do celular. Alteramos essa valores para que a imagem encaixe perfeitamente dentro da tela do celular que atua como modelo de 'iframe' */
+    top: 80px;
+    left: 22px;
+    width: 269px;
+    height: 471px;
+}
+
+/* Configurações da parte referente aos botões de redes sociais */
+section#redes-sociais {
+    text-align: right;
+}
+
+/* Configurações do tamanho e formato dos botões de redes sociais. Veja que precisamos referenciar o 'img' que se refere as imagens dos ícones das redes sociais */
+section#redes-sociais img {
+    width: 50px;
+    margin: 10px; /* Adiciona um espaçamento entre os botões */
+    border-radius: 50%; /* Faz com que os botões fiquem arredondados */
+
+    /* Faz com que os botões fiquem com uma sombra */
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); 
+
+    /* Impede que o conteúdo aumente em situações específicas, nesse caso, vai impedir que todos os botões aumentem ao passar o mouse por cima, efeito que será aplicado somente no botão alvo */
+    box-sizing: border-box;
+}
+
+/* Pseudo-class 'hover' serve para alterar o estilo da imagem ao passar o mouse por cima */
+section#redes-sociais img:hover {
+    /* Adiciona uma borda ao botão ao passar o mouse por cima */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+
+    /* Cria uma efeito que desloca o botão ao passar o mouse por cima */
+    transform: translate(-2px, -2px); 
+
+    /* Faz com que a sombra acompanhe o deslocamento do botão ao paasar o mouse por cima */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    /* Faz com que a transição seja suave. A transição é o tempo de resposta visual do elemento ao passar o mouse por cima e tirar o mouse do botão. O 'border 0.2s' também é o efeito de transição aplicado à borda */
+    transition: transform 0.2s, border 0.2s; 
+}
