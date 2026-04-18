@@ -12,8 +12,9 @@
 
         /* O 'body' será a parte visualizavel na tela do celular que está sendo exibido na página principal que é o 'index.html'*/
         body {
-            height: 100vh; /* Necessário para que ocupe toda a altura da tela */
-            width: 100vw; /* Necessário para que ocupe toda a largura da tela */
+            /* O 'height' e 'width' são necessários para que ocupe toda a altura da tela do celular modelo. Se usar '100vh' e '100vw', a imagem irá ocupar toda a vw da página principal, ultrapassando o tamanho do celular */
+            height: 100%; 
+            width: 100%;
             background: black url(/imagens/tela-home.jpg) no-repeat top center;
             background-size: cover; /* O 'cover' faz com que a imagem cubra toda a tela, fazendo com que no celular modelo, seja exbido a página inteira, sem scroll */
         }

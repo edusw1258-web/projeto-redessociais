@@ -41,7 +41,7 @@ iframe#tela {
     /* As configurações de 'top', 'left', 'width' e 'height' se referem ao tamanho da imagem na tela do celular. Alteramos essa valores para que a imagem encaixe perfeitamente dentro da tela do celular que atua como modelo de 'iframe' */
     top: 80px;
     left: 22px;
-    width: 269px;
+    width: 267px;
     height: 471px;
 }
 
